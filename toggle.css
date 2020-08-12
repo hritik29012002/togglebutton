@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+:root{
+    --bgcolor: white;
+    --textcolor: black;
+}
+#box1{
+    height: 100%;
+    width: 100%;
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    transition: background-color ease-in 0.5s;
+}
+#button{
+    height: 90px;
+    width: 270px;
+    background-color: #808080;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100px;
+}
+input[type="checkbox"]{
+    display: none;
+}
+#knob{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    transition: 0.5s ease-in;
+}
+#toggle:checked ~div #knob{
+    left: 185px;
+}
+#toggle:checked +#box1{
+    --bgcolor: black;
+    --textcolor:white;
+    transition: background-color ease-in 0.5s;
+}
